@@ -2,17 +2,20 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 })
 module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
-    domains: ['s3.us-east-2.amazonaws.com'],
+    domains: ['assets.vercel.com'],
+    formats: ['image/avif', 'image/webp'],
   },
-  webpack: (config, { isServer }) => {
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  // webpack5: false,
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Fixes npm packages (mdx) that depend on `fs` module
-    if (!isServer) {
-      config.node = {
-        fs: "empty",
-      }
-    }
+    config.resolve.fallback = {
+      ...config.resolve.fallback, // if you miss it, all the other options in fallback, specified
+        // by next.js will be dropped. Doesn't make much sense, but how it is
+      fs: false, // the solution
+    };
+
     return config
   },
 })
