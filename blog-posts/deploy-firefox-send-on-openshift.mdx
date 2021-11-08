@@ -1,8 +1,8 @@
 ---
 title: 'Deploy Firefox Send on OpenShift'
 excerpt: 'A step-by-step explanation of how to deploy Firefox Send on an OpenShift Cluster with very minimal effort.'
-thumbnail: 'https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/small_8_send_main_page_a84acf4605.jpg'
-coverImage: 'https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/8_send_main_page_a84acf4605.jpg'
+thumbnail: '/small_8_send_main_page_a84acf4605.jpg'
+coverImage: '/8_send_main_page_a84acf4605.jpg'
 date: '2020-09-22T00:00:00.027Z'
 ---
 
@@ -20,13 +20,13 @@ Now let's look at the [server/config.js](https://github.com/Bilal-io/send/blob/m
 
 1. First, we need to create a new project, let's name it `firefox-send` You can do that using the CLI by typing `oc new-project firefox-send` or on the Web Console, as shown below.
 
-  ![OpenShift Web Console, how to create a new project](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/1_create_new_project_9287d756d6.png "OpenShift Web Console, how to create a new project")
+  ![OpenShift Web Console, how to create a new project](/1_create_new_project_9287d756d6.png "OpenShift Web Console, how to create a new project")
 
 2. Now switch to the Developer view on the Web Console, and click `+Add` to add a new application, and then click on `From Catalog` and select `Redis`.
 
 3. You can leave all the fields to their default value and click the `Create` button. This will create our Redis deployment, and secret where the Redis password is stored. We will use this later.
 
-  ![Redis Template Form](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/3_redis_form_29ff32015b.jpg "Redis Template Form" )
+  ![Redis Template Form](/3_redis_form_29ff32015b.jpg "Redis Template Form" )
 4. Now click on `+Add` and now choose `From Dockerfile`.
 
 5. Next up we will fill out the necessary information to create our application.
@@ -35,11 +35,11 @@ Now let's look at the [server/config.js](https://github.com/Bilal-io/send/blob/m
   - *Container Port* `1443`
   - Choose an *application name* and *name* for your container
 
-  ![Add From DockerFile form: First section](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/5_fill_out_required_information_a_9e8489f5e4.jpg "Add From DockerFile form: First section")
+  ![Add From DockerFile form: First section](/5_fill_out_required_information_a_9e8489f5e4.jpg "Add From DockerFile form: First section")
 
   - (Optional) On the very bottom, click `Routing`, and then fill in the *Hostname,* *Target Port* `1443` and *Security* options.
 
-  ![Add From Dockerfile Form: Routing](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/5_fill_out_required_information_b_940affa946.jpg "Add From Dockerfile Form: Routing")
+  ![Add From Dockerfile Form: Routing](/5_fill_out_required_information_b_940affa946.jpg "Add From Dockerfile Form: Routing")
 
   - At the very bottom click on *Deployment* and add the Environment variable and their values.
     - `FILE_DIR:/data`
@@ -52,7 +52,7 @@ Now let's look at the [server/config.js](https://github.com/Bilal-io/send/blob/m
     - ...Plus any other environment variable that may fit your requirements
   - Now click `Create`
 
-  ![Add From Dockerfile form: adding deployment environment variables](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/5_fill_out_required_information_c_ff345d7391.jpg "Add From Dockerfile form: adding deployment environment variables")
+  ![Add From Dockerfile form: adding deployment environment variables](/5_fill_out_required_information_c_ff345d7391.jpg "Add From Dockerfile form: adding deployment environment variables")
 
   > You will see some failed pods before the image is done building, this is normal. The pods will be recreated once the image has finished building.
 
@@ -63,13 +63,13 @@ Now let's look at the [server/config.js](https://github.com/Bilal-io/send/blob/m
 - Once the Add Storage page is open, fill it out with the required values.
 - Click Save, and now go back to the Topology view, click on the pod again, and watch the build logs.
 
-![Steps to add storage](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/6_add_storage_094d5fa01a.jpg "Steps to add storage")
+![Steps to add storage](/6_add_storage_094d5fa01a.jpg "Steps to add storage")
 
-![Add Storage: fill out the form](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/6_add_storage_form_cd8d92ef7b.jpg "Add Storage: fill out the form")
+![Add Storage: fill out the form](/6_add_storage_form_cd8d92ef7b.jpg "Add Storage: fill out the form")
 
 ## Success
 
-![Self-hosted Firefox Send main page](https://s3.us-east-2.amazonaws.com/uploads.bilalkhoukhi.com/8_send_main_page_a84acf4605.jpg "Self-hosted Firefox Send main page")
+![Self-hosted Firefox Send main page](/8_send_main_page_a84acf4605.jpg "Self-hosted Firefox Send main page")
 
 And with that, our app is ready to be used. 
 

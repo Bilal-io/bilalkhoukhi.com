@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <nav className="flex w-full max-w-none mx-auto items-center justify-between flex-wrap p-6">
-      <div className="bg-grey-900 dark:bg-white transition-colors duration-500 hover:bg-red-400 dark:hover:bg-red-400 hover:transition-colors hover:duration-500">
+      <div className="bg-grey-900 dark:bg-white transition-colors duration-500 hover:bg-red-500 dark:hover:bg-red-500 hover:transition-colors hover:duration-500">
         <Link href="/">
           <a className="text-white dark:text-grey-900 transition-colors duration-500 font-bold no-underline text-xl w-10 h-10 leading-4 flex justify-center items-center tracking-tight">bk</a>
         </Link>
@@ -50,12 +50,12 @@ export default function Header() {
 
       <div className="flex items-center w-auto mt-4 ml-auto text-sm">
         <Link href="/">
-          <a className={`block md:inline-block pl-2 md:pl-0 mr-8  ${!router.pathname.includes('/about') ? 'text-red-400 font-bold' : null}`}>
+          <a className={`block md:inline-block pl-2 md:pl-0 mr-8  ${!router.pathname.includes('/about') ? 'text-red-500 font-bold' : null}`}>
             Blog
           </a>
         </Link>
         <Link href="/about">
-          <a className={`block md:inline-block pl-2 md:pl-0 mr-8  ${router.pathname.includes('/about') ? 'text-red-400 font-bold' : null}`}>
+          <a className={`block md:inline-block pl-2 md:pl-0 mr-8  ${router.pathname.includes('/about') ? 'text-red-500 font-bold' : null}`}>
             About
           </a>
         </Link>

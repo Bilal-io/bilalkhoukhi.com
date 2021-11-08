@@ -5,7 +5,7 @@ import Footer from './footer'
 import CodeBlock from './code-block'
 
 export default function Layout({post}) {
-  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
   const components = {
     a: props => <a  rel="noopener" target="_blank" {...props} />,
@@ -16,6 +16,7 @@ export default function Layout({post}) {
 
   return (
     <>
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
 
@@ -36,10 +37,10 @@ export default function Layout({post}) {
         <meta property="twitter:title" content={post?.title}></meta>
         <meta property="twitter:description" content={post?.excerpt}></meta>
         <meta property="twitter:image" content={post?.thumbnail}></meta>
-
       </Head>
 
       <Header />
+
       <main className="prose dark:prose-dark container w-full max-w-4xl mt-4 lg:mt-8 mb-24 mx-auto px-6 lg:px-0">
         <span className="block border-grey-800 border-b-2 mb-12">
           <span className="text-grey-600 dark:text-grey-400 text-sm mt-2 md:mt-0 mb-1 flex items-center">
@@ -58,7 +59,8 @@ export default function Layout({post}) {
           {post.content}
         </MDX>
       </main>
-      <Footer></Footer>
+      
+      <Footer />
     </>
   )
 }
