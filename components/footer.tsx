@@ -22,7 +22,7 @@ export default function Footer() {
             profileLinks.map(profile => {
               return (
                 <a key={profile.name} className="text-red-500 hover:text-white font-semibold hover:bg-red-500 uppercase mr-8 p-2 last:m-0"
-                  rel="noopener" href={profile.link} target="_blank">{profile.name}</a>
+                  rel="noopener noreferrer" href={profile.link} target="_blank">{profile.name}</a>
               )
             })
           }
@@ -31,7 +31,7 @@ export default function Footer() {
 
       <p className="text-center mt-4">
         Made with Next.js - 
-        <a className="hover:text-white font-semibold hover:bg-red-500 uppercase mr-8 p-2 last:m-0" rel="noopener" href="https://github.com/Bilal-io/bilalkhoukhi.com" target="_blank">
+        <a className="hover:text-white font-semibold hover:bg-red-500 uppercase mr-8 p-2 last:m-0" rel="noopener noreferrer" href="https://github.com/Bilal-io/bilalkhoukhi.com" target="_blank">
           Source Code on Github
         </a>
       </p>
