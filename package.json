@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
@@ -25,6 +26,8 @@
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.34",
     "autoprefixer": "^10.4.0",
+    "eslint": "^7.23.0",
+    "eslint-config-next": "12.0.3",
     "postcss": "^8.3.11",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
