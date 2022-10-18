@@ -26,7 +26,7 @@ export default function Footer() {
               )
             })
           }
-          <span className="text-red-500 hover:text-white font-semibold hover:bg-red-500 uppercase mr-8 p-2 last:m-0"><span>hello</span> at <span>bilalkhoukhi.com</span></span>
+          <span className="text-red-500 hover:text-white font-semibold hover:bg-red-500 uppercase mr-8 p-2 last:m-0">Email (base64) aGVsbG9AYmlsYWxraG91a2hpLmNvbQ==</span>
       </div>
 
       <p className="text-center mt-4">
