@@ -16,7 +16,7 @@ export default function About() {
     },
   ]
 
-  const tech = ["Javascript", "Nodejs", "Typescript", ".Net", "C#", "Angular", "React", "GraphQL", "HTML", "CSS", "SCSS", "SQL", "PostgreSQL", "ORM", "Express", "Linux", "Bash", "Python", "Serverless", "Knative", "Docker", "Kubernetes"]
+  const tech = ["Javascript", "Nodejs", "Typescript", ".Net", "C#", "Angular", "React", "GraphQL", "HTML", "CSS", "SCSS", "SQL", "PostgreSQL", "ORM", "Express", "Linux", "Bash", "Python", "Serverless", "Knative", "CI/CD", "Docker", "Kubernetes", "Azure"]
   return (
     <Layout title="About BK">
       <header className="mb-8">
